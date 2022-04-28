@@ -1,0 +1,22 @@
+<%- include('partials/head.ejs', {title: 'Login'}) %>
+    <div class="container d-flex justify-content-center align-items-center p-5">
+        <div class="card">
+            <div class="card-body px-5 py-4">
+                <form action="" class="form d-flex align-items-start flex-column">
+                    <ion-icon name="person-outline" class="m-auto"></ion-icon>
+                    <div class="form-group mt-3 d-flex">
+                        <label for="user">User</label>
+                        <input type="text" class="form-control" placeholder="Enter your name or email">
+                    </div>
+                    <div class="form-group mt-3 d-flex">
+                        <label for="user">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 mt-4">Login</button>
+                    <a href="/" class="btn btn-warning">Home</a>
+                    <a href="/system" class="btn btn-success">System</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('partials/foot.ejs') %>
