@@ -4,3 +4,8 @@ package.json
 
 
 *.css.map
+
+*.jpg
+*.png
+*.jpeg
+*.svg
