@@ -6,6 +6,7 @@ const router = Router();
 
 router.get('/', controller.getHomeView);
 router.get('/login', controller.getLoginView);
-router.get('/system', controller.getSystemView)
+router.get('/register', controller.getRegisterView);
+router.get('/system', controller.getSystemView);
 
 export default router;
