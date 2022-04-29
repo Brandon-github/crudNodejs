@@ -48,6 +48,49 @@
                 background-color: inherit;
                 border-radius: 20px 0 0 20px;
             }
+
+            .form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                &__icon {
+                    font-size: 8rem;
+                    margin-bottom: 60px;
+                    color: c.$primary-color;
+
+                    &--small {
+                        font-size: 1.5rem;
+                        color: c.$primary-color;
+                        transform: translateY(10px) translateX(-20px);
+                    }
+                }
+
+                &__block {
+                    margin-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+
+                    .form__label {
+                        margin-left: 40px;
+                    }
+
+                    .form__input {
+                        padding: 10px 15px;
+                        outline: none;
+                        border-style: none;
+                        border-bottom: 1px solid c.$primary-color;
+                        width: 300px;
+                        color: #444;
+                        font-size: 0.9em;
+                    }
+                }
+
+                &__text {
+                    font-size: 0.85em;
+                }
+            }
         }
     }
 }
