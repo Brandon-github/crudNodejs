@@ -6,44 +6,57 @@ CREATE DATABASE IF NOT EXISTS app;
 
 USE app;
 
--- Create Tables
-CREATE TABLE roles(
-	id INT NOT NULL,
-    name_role VARCHAR(90) NOT NULL
-);
-
-ALTER TABLE roles
-	MODIFY id INT NOT NULL AUTO_INCREMENT,
-    ADD CONSTRAINT PK_ROLE PRIMARY KEY(id);
 
 CREATE TABLE users(
 	id INT NOT NULL,
-    name_user VARCHAR(120) NOT NULL,
-    email_user VARCHAR(120) NOT NULL,
-    age_user INT NOT NULL,
-    id_role INT NOT NULL
+    name_user VARCHAR(120),
+    email_user VARCHAR(120),
+    password_user VARCHAR(60)
 );
 
 ALTER TABLE users
 	MODIFY id INT NOT NULL AUTO_INCREMENT,
-    ADD CONSTRAINT PK_USER PRIMARY KEY(id),
-    ADD CONSTRAINT FK_ROLE FOREIGN KEY(id_role) 
-		REFERENCES roles(id);
-        
--- Insert Dates
-INSERT INTO roles(name_role)
-	VALUES
-    ('Admin'),
-    ('Assistant'),
-    ('Guest');
+    ADD CONSTRAINT PK_USER PRIMARY KEY(id);
     
-INSERT INTO users(name_user, email_user, age_user, id_role)
-	VALUES
-    ('Juan', 'Juan42@gmail.com', 42, 1),
-    ('Maria', 'Maria58@gmail.com', 34, 2),
-    ('Pedro', 'Pedro065@gmail.com', 56, 1),
-    ('Sara', 'Sara265@gmail.com', 27, 3),
-    ('Fernando', 'Fern42@gmail.com', 32, 3);
+CREATE TABLE type_products(
+	id INT NOT NULL,
+    name_type VARCHAR(80) NOT NULL
+);
+
+ALTER TABLE type_products
+	MODIFY id INT NOT NULL AUTO_INCREMENT,
+    ADD CONSTRAINT PK_TYPE PRIMARY KEY(id);
+    
+CREATE TABLE products(
+	id INT NOT NULL,
+    name_product VARCHAR(120) NOT NULL,
+    description_product VARCHAR(255),
+    price_product INT NOT NULL,
+    id_type INT NOT NULL
+);
+
+ALTER TABLE products
+	MODIFY id INT NOT NULL AUTO_INCREMENT,
+    ADD CONSTRAINT PK_PRODUCT PRIMARY KEY(id),
+    ADD CONSTRAINT FK_TYPE FOREIGN KEY(id_type)
+		REFERENCES type_products(id);
         
+CREATE TABLE products_add(
+ id INT NOT NULL,
+ id_product INT NOT NULL,
+ id_user INT NOT NULL
+);
+
+ALTER TABLE products_add
+	MODIFY id INT NOT NULL AUTO_INCREMENT,
+    ADD CONSTRAINT PK_PRODUCT_ADD PRIMARY KEY(id),
+    ADD CONSTRAINT FK_PRODUCT FOREIGN KEY(id_product)
+		REFERENCES products(id),
+	ADD CONSTRAINT FK_USER FOREIGN KEY(id_user)
+		REFERENCES users(id);
+
+
+
+
 
         
