@@ -2,8 +2,11 @@
     <div class="container">
         <a href="/user" class="btn btn-dark">Users</a>
         <a href="/role" class="btn btn-dark">Roles</a>
-        <% if(true) { %>
-            <h2>hola</h2>
+        <a href="/system" class="btn btn-dark">System</a>
+        <% if (typeof roles != 'undefined') { %>
+            <%- include('templates/role/list.ejs', {roles}) %>
+        <% } else if (typeof users != 'undefined') { %>
+            <%- include('templates/user/list.ejs', {users}) %>
         <% } %>
     </div>
 <%- include('partials/foot.ejs') %>
