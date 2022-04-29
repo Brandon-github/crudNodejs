@@ -1,5 +1,16 @@
+@use '../utilities/variables' as c;
+
 .button {
-    padding: 10px 30px;
+    padding: 10px 50px;
     font-size: 1.3rem;
     font-weight: 800;
+    background-color: c.$primary-color;
+    color: c.$text-color;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: c.$primary-color-alt;
+    }
 }
