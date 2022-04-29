@@ -32,9 +32,9 @@ controller.addUser = (req, res) => {
             }
         });
     } else if (password !== password2) {
-        console.log("La contraseñas deben ser identicas");
+        res.redirect('/register');
     } else {
-        console.log("error");
+        res.redirect('/register');
     }
 }
 
