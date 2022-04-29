@@ -1,22 +1,30 @@
 <%- include('partials/head.ejs', {title: 'Login'}) %>
-    <div class="container d-flex justify-content-center align-items-center p-5">
-        <div class="card">
-            <div class="card-body px-5 py-4">
-                <form action="" class="form d-flex align-items-start flex-column">
-                    <ion-icon name="person-outline" class="m-auto"></ion-icon>
-                    <div class="form-group mt-3 d-flex">
-                        <label for="user">User</label>
-                        <input type="text" class="form-control" placeholder="Enter your name or email">
-                    </div>
-                    <div class="form-group mt-3 d-flex">
-                        <label for="user">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter your password">
-                    </div>
-                    <button type="submit" class="btn btn-dark w-100 mt-4">Login</button>
-                    <a href="/" class="btn btn-warning">Home</a>
-                    <a href="/system" class="btn btn-success">System</a>
-                </form>
+    <div class="container">
+        <section class="login">
+            <div class="box">
+                <div class="box__image">
+                    <img src="img/bg.jpg" alt="login page image" class="image">
+                </div>
+                <div class="box__form">
+                    <form action="/" method="post" class="form">
+                        <ion-icon name="person-outline" class="form__icon"></ion-icon>
+                        <div class="form__block">
+                            <label for="user" class="form__label">
+                                <ion-icon name="person-outline" class="form__icon--small"></ion-icon>
+                            </label>
+                            <input type="text" class="form__input" name="user" id="user" placeholder="Enter your user or email">
+                        </div>
+                        <div class="form__block">
+                            <label for="password" class="form__label">
+                                <ion-icon name="key-outline" class="form__icon--small"></ion-icon>
+                            </label>
+                            <input type="password" class="form__input" name="password" id="password" placeholder="Enter your password">
+                        </div>
+                        <span class="form__text">you don't have an account register <a href="/register" class="form__link">here</a></span>
+                        <button type="submit" class="button button--dark">Login</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 <%- include('partials/foot.ejs') %>
