@@ -1,0 +1,36 @@
+@use '../utilities/variables' as c;
+
+.nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: c.$primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+
+    &__brand {
+        &--link {
+            color: c.$text-color;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 40px;
+
+        .nav__item {
+            display: inline-block;
+
+            .nav__link {
+                color: c.$text-color;
+                font-size: 1.15rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@use '../utilities/variables' as c;
+
+.login {
+    width: inherit;
+    min-height: inherit;
+
+    .box {
+        position: relative;
+        width: inherit;
+        min-height: inherit;
+
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: c.$primary-color, $alpha: 0.5);
+            }
+        }
+
+        &__form {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: c.$bg-color;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -40px;
+                width: 40px;
+                height: 100%;
+                background-color: inherit;
+                border-radius: 20px 0 0 20px;
+            }
+        }
+    }
+}
