@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <th>
+            <td>Id</td>
+            <td>Name</td>
+        </th>
+    </thead>
+    <tbody>
+        <% roles.forEach(function(role) { %>
+            <tr>
+                <td>0000<%= role.id %></td>
+                <td><%= role.name_role %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
