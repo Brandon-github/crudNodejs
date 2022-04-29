@@ -1,0 +1,42 @@
+<%- include('partials/head.ejs', {title: 'Login'}) %>
+    <div class="container">
+        <section class="login">
+            <div class="box">
+                <div class="box__image">
+                    <img src="img/bg.jpg" alt="login page image" class="image">
+                </div>
+                <div class="box__form">
+                    <form action="/" method="post" class="form">
+                        <ion-icon name="person-add-outline" class="form__icon"></ion-icon>
+                        <div class="form__block">
+                            <label for="name" class="form__label">
+                                <ion-icon name="person-outline" class="form__icon--small"></ion-icon>
+                            </label>
+                            <input type="text" class="form__input" name="name" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form__block">
+                            <label for="email" class="form__label">
+                                <ion-icon name="mail-outline" class="form__icon--small"></ion-icon>
+                            </label>
+                            <input type="email" class="form__input" name="email" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form__block">
+                            <label for="password" class="form__label">
+                                <ion-icon name="key-outline" class="form__icon--small"></ion-icon>
+                            </label>
+                            <input type="password" class="form__input" name="password" id="password" placeholder="Enter your password">
+                        </div>
+                        <div class="form__block">
+                            <label for="password2" class="form__label">
+                                <ion-icon name="key-outline" class="form__icon--small"></ion-icon>
+                            </label>
+                            <input type="password2" class="form__input" name="password2" id="password2" placeholder="Enter your password again">
+                        </div>
+                        <span class="form__text">you already have an account enter <a href="/login" class="form__link">here</a></span>
+                        <button type="submit" class="button button--dark">Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+<%- include('partials/foot.ejs') %>
